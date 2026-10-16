@@ -3,7 +3,7 @@ Converge — AI-Powered Collaborative Whiteboard
 Think together. Build smarter.
 
 
-Link :-Live link {https://converge-alpha-pearl.vercel.app/}
+Link :-Live link https://converge-alpha-pearl.vercel.app/
 
 Converge is an AI-powered collaborative workspace designed to bring people, ideas, and plans together in one shared visual space. It aims to make brainstorming more intuitive by combining real-time collaboration with AI-assisted planning, helping teams transform scattered thoughts into structured, actionable outcomes.
 
