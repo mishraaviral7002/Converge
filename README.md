@@ -1,16 +1,44 @@
-# React + Vite
+Converge — AI-Powered Collaborative Whiteboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Think together. Build smarter.
 
-Currently, two official plugins are available:
+Converge is an AI-powered collaborative workspace designed to bring people, ideas, and plans together in one shared visual space. It aims to make brainstorming more intuitive by combining real-time collaboration with AI-assisted planning, helping teams transform scattered thoughts into structured, actionable outcomes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🚧 Status: Currently under development.
 
-## React Compiler
+✨ Vision
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of Converge is to create a space where people can brainstorm, organize ideas, build mind maps, design workflows, and turn discussions into actionable plans — together, with the help of AI.
 
-## Expanding the ESLint configuration
+🚀 Planned Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Interactive Whiteboard — A visual canvas for brainstorming, drawing, and organizing ideas.
+- Real-Time Collaboration — Allow multiple users to work together on the same board.
+- AI-Powered Brainstorming — Generate ideas, summarize discussions, and explore possible solutions.
+- Intelligent Planning — Transform brainstormed ideas into structured plans, tasks, and workflows.
+- Visual Mind Mapping — Connect related concepts and visualize relationships between ideas.
+- Shared Workspaces — Organize boards around teams, projects, and goals.
+
+🛠️ Tech Stack
+
+The stack will evolve as development progresses.
+
+- Frontend: React, TypeScript
+- Styling: CSS / Tailwind CSS
+- Backend: Node.js, Express
+- Database: To be determined
+- Real-Time Collaboration: WebSockets / Socket.IO
+- AI Integration: LLM APIs
+
+
+💡 Why Converge?
+
+Ideas become more valuable when people can explore, refine, and build upon them together. Converge aims to bridge the gap between brainstorming and execution by combining collaborative visual tools with AI assistance.
+
+🤝 Contributing
+
+Converge is currently in its early development stage. Suggestions, feedback, and ideas are welcome as the project evolves.
+
+📄 License
+
+A license will be added once the project licensing terms have been decided.
