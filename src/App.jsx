@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import HomePage from './HomePage/HomePage';
+import HomePage from './HomePage/HomePage.jsx';
 import About from './AboutPage/About.jsx';
 import Contact from './ContactPage/Contact.jsx'
 
