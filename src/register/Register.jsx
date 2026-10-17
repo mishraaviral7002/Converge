@@ -1,28 +1,7 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        address: '',
-        password: '',
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Registration submitted:', formData);
-    };
-
     return (
         <div className="register-page">
             {/* Background ambient gradient glow */}
@@ -42,7 +21,7 @@ const Register = () => {
 
                 {/* Registration Card */}
                 <div className="register-card">
-                    <form className="register-form" onSubmit={handleSubmit}>
+                    <form className="register-form">
                         {/* Name */}
                         <div className="form-group">
                             <label htmlFor="name">Full Name</label>
@@ -51,9 +30,6 @@ const Register = () => {
                                 name="name"
                                 type="text"
                                 placeholder="Aviral Mishra"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
                                 className="form-input"
                             />
                         </div>
@@ -66,9 +42,6 @@ const Register = () => {
                                 name="email"
                                 type="email"
                                 placeholder="name@company.com"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
                                 className="form-input"
                             />
                         </div>
@@ -81,9 +54,6 @@ const Register = () => {
                                 name="address"
                                 type="text"
                                 placeholder="City, State / Country"
-                                value={formData.address}
-                                onChange={handleChange}
-                                required
                                 className="form-input"
                             />
                         </div>
@@ -96,9 +66,6 @@ const Register = () => {
                                 name="password"
                                 type="password"
                                 placeholder="Create a secure password"
-                                value={formData.password}
-                                onChange={handleChange}
-                                required
                                 className="form-input"
                             />
                         </div>

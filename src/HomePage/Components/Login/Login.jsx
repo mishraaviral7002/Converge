@@ -1,16 +1,7 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Login attempt:', { email, password });
-    };
-
     return (
         <div className="login-page">
             {/* Background ambient gradient glow */}
@@ -30,16 +21,13 @@ const Login = () => {
 
                 {/* Login Card */}
                 <div className="login-card">
-                    <form className="login-form" onSubmit={handleSubmit}>
+                    <form className="login-form">
                         <div className="form-group">
                             <label htmlFor="email">Email address</label>
                             <input
                                 id="email"
                                 type="email"
                                 placeholder="name@company.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
                                 className="form-input"
                             />
                         </div>
@@ -53,9 +41,6 @@ const Login = () => {
                                 id="password"
                                 type="password"
                                 placeholder="••••••••"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
                                 className="form-input"
                             />
                         </div>
