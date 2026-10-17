@@ -21,7 +21,7 @@ const Register = () => {
 
                 {/* Registration Card */}
                 <div className="register-card">
-                    <form className="register-form">
+                    <form className="register-form"  action="http://localhost:3000/register" method="POST">
                         {/* Name */}
                         <div className="form-group">
                             <label htmlFor="name">Full Name</label>
@@ -46,17 +46,6 @@ const Register = () => {
                             />
                         </div>
 
-                        {/* Address */}
-                        <div className="form-group">
-                            <label htmlFor="address">Address</label>
-                            <input
-                                id="address"
-                                name="address"
-                                type="text"
-                                placeholder="City, State / Country"
-                                className="form-input"
-                            />
-                        </div>
 
                         {/* Password */}
                         <div className="form-group">
