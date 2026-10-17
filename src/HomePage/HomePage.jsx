@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Homepage.css';
 import heroImage from '../assets/hero.png';
 
@@ -8,7 +9,6 @@ const HomePage = () => {
     const [email, setEmail] = useState('');
     const [isSubscribed, setIsSubscribed] = useState(false);
 
-    // Refs for smooth inertia scrolling
     const scrollState = useRef({
         current: 0,
         target: 0,
@@ -127,6 +127,7 @@ const HomePage = () => {
                     </ul>
 
                     <div className="nav-buttons">
+                        <Link to="/Login" className="btn-login-nav">Log in</Link>
                         <a href="#early-access" onClick={(e) => scrollTo(e, 'early-access')} className="btn-app-link">Open live app ↗</a>
                     </div>
                 </div>

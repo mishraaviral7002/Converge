@@ -84,6 +84,22 @@
 
 .nav-buttons {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-login-nav {
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    transition: color 0.2s ease;
+}
+
+.btn-login-nav:hover {
+    color: #2563eb;
 }
 
 .btn-app-link {
