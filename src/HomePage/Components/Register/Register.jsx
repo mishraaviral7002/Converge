@@ -1,7 +1,37 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleRegister = async (e) => {
+        if (e) e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
+            });
+
+            if (response.ok) {
+                navigate('/Login');
+            }
+        } catch (error) {
+            console.error('Error during registration:', error);
+        }
+    };
+
     return (
         <div className="register-page">
             {/* Background ambient gradient glow */}
@@ -21,7 +51,7 @@ const Register = () => {
 
                 {/* Registration Card */}
                 <div className="register-card">
-                    <form className="register-form">
+                    <form className="register-form" onSubmit={handleRegister}>
                         {/* Name */}
                         <div className="form-group">
                             <label htmlFor="name">Full Name</label>
@@ -31,6 +61,9 @@ const Register = () => {
                                 type="text"
                                 placeholder="Aviral Mishra"
                                 className="form-input"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
                             />
                         </div>
 
@@ -43,9 +76,11 @@ const Register = () => {
                                 type="email"
                                 placeholder="name@company.com"
                                 className="form-input"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
                             />
                         </div>
-
 
                         {/* Password */}
                         <div className="form-group">
@@ -56,11 +91,14 @@ const Register = () => {
                                 type="password"
                                 placeholder="Create a secure password"
                                 className="form-input"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </div>
 
                         {/* Submit Button */}
-                        <button type="submit" className="btn-register-submit">
+                        <button type="submit" className="btn-register-submit" onClick={handleRegister}>
                             Create Account
                         </button>
 

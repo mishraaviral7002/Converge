@@ -3,15 +3,15 @@ import { Tldraw, toRichText } from 'tldraw';
 import { useSyncDemo } from '@tldraw/sync';
 import 'tldraw/tldraw.css';
 
-// Dedicated room ID to prevent colliding with globally polluted public demo rooms
+
+
+
 const ROOM_ID = 'converge-shared-whiteboard-session';
 
 const Canvas = () => {
     const store = useSyncDemo({ roomId: ROOM_ID });
 
-    // Stabilize onMount callback with useCallback to prevent infinite re-renders
     const handleMount = useCallback((editor) => {
-        // Only add initial welcome text if the canvas is currently empty
         if (editor.getCurrentPageShapeIds().size === 0) {
             editor.createShape({
                 type: 'text',
@@ -29,7 +29,8 @@ const Canvas = () => {
         }
     }, []);
 
-    // 1. Show sleek loading screen while the multiplayer room establishes connection
+
+
     if (store.status === 'loading') {
         return (
             <div style={{
@@ -64,7 +65,6 @@ const Canvas = () => {
         );
     }
 
-    // 2. If the demo sync server is blocked or unreachable, fall back gracefully to local canvas
     if (store.status === 'error') {
         return (
             <div style={{ position: 'fixed', inset: 0 }}>
@@ -73,7 +73,7 @@ const Canvas = () => {
         );
     }
 
-    // 3. Synced successfully - render interactive canvas
+
     return (
         <div style={{ position: 'fixed', inset: 0 }}>
             <Tldraw onMount={handleMount} store={store} />

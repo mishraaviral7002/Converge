@@ -1,20 +1,76 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './DashBoard.css';
 
 const DashBoard = () => {
     const navigate = useNavigate();
     const [roomCode, setRoomCode] = useState('');
-
+    const [isAllowed, setIsAllowed] = useState(false);
+    const [Loading , setIsLoading] = useState(true);
     const handleCreateCanvas = () => {
 
         navigate('/canvas');
     };
+    const [nameConverge, setNameConverge] = useState('John Doe');
+    const [emailConverge, setEmailConverge] = useState('');
 
     const handleJoinCanvas = (e) => {
         e.preventDefault();
         navigate('/canvas');
     };
+
+    const handleSwitchAccount = async () => {
+        try {
+            await fetch('http://localhost:3000/logout', {
+                method: 'POST',
+                credentials: 'include',
+            });
+
+            navigate('/Login');
+        } catch (error) {
+            console.error("Error logging out:", error);
+        }
+    };
+
+
+    useEffect(() => {
+        async function verifyLoggingIN() {
+            try{
+                const userInfo = await fetch("http://localhost:3000/checkForLoggedIn",
+                    {
+                        method: "GET",
+                        credentials: 'include',
+                    }
+                    );
+                if(userInfo.status === 200) {
+                    const data = await userInfo.json();
+                    setNameConverge(data.name);
+                    setEmailConverge(data.email);
+                    setIsAllowed(true);
+                }
+            }
+            catch(error){
+                console.log(error);
+                setIsAllowed(false);
+            }
+            finally{
+                setIsLoading(false);
+            }
+        }
+
+        verifyLoggingIN();
+    } ,[]) ;
+
+    if (Loading) {
+        return <div>Verifying your credentials, please wait...</div>;
+    }
+
+    if (!isAllowed) {
+        return <div>⛔ Access Denied...</div>;
+    }
+
+
+
 
     return (
         <div className="dashboard-page">
@@ -38,16 +94,16 @@ const DashBoard = () => {
                             <span className="online-dot" title="Active"></span>
                         </div>
                         <div className="user-meta">
-                            <span className="user-name">Aviral Mishra</span>
+                            <span className="user-name">{nameConverge}</span>
                             <span className="user-status-text">Logged in</span>
                         </div>
                     </div>
 
                     {/* Switch / Log In Option */}
                     <div className="header-actions">
-                        <Link to="/Login" className="btn-switch-account">
+                        <button className="btn-switch-account" onClick={handleSwitchAccount}>
                             Switch Account
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </header>
@@ -124,28 +180,12 @@ const DashBoard = () => {
                 <div className="recent-sessions-section">
                     <div className="section-title-row">
                         <h3 className="section-title">Recent Whiteboards</h3>
-                        <span className="skeletal-tag">Skeletal Preview</span>
                     </div>
 
                     <div className="skeletal-grid">
-                        <div className="skeletal-item" onClick={handleCreateCanvas}>
-                            <div className="skeletal-preview-box">
-                                <span className="preview-emoji">🎨</span>
-                            </div>
-                            <div className="skeletal-info">
-                                <div className="skeletal-title">Default Workspace Canvas</div>
-                                <div className="skeletal-meta">Room: 123 • Active</div>
-                            </div>
-                        </div>
+                        <div className="skeletal-item" >
 
-                        <div className="skeletal-item placeholder-item">
-                            <div className="skeletal-preview-box empty-box">
-                                <span>+</span>
-                            </div>
-                            <div className="skeletal-info">
-                                <div className="skeletal-title">New Slot</div>
-                                <div className="skeletal-meta">Available to initialize</div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,80 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import {useEffect, useState} from "react";
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const [isAllowed, setIsAllowed] = useState(false);
+    const [Loading , setIsLoading] = useState(true);
+
+    useEffect(() => {
+        async function verifyLoggingIN() {
+            try{
+                const userInfo = await fetch("http://localhost:3000/checkForLoggedIn",
+                    {
+                        method: "GET",
+                        credentials: 'include',
+                    }
+                );
+                if(userInfo.status === 200) {
+                    setIsAllowed(false);
+                }
+            }
+            catch(error){
+                console.log(error);
+                setIsAllowed(true);
+            }
+            finally{
+                setIsLoading(false);
+            }
+        }
+
+        verifyLoggingIN();
+    } ,[]) ;
+
+    if (Loading) {
+        return <div>Loading</div>;
+    }
+
+    if (!isAllowed) {
+        navigate('/dashboard' , { replace: true });
+    }
+
+
+
+    const HandleLogin = async (e) => {
+        if (e) e.preventDefault();
+        setError('');
+        setLoading(true);
+
+        try {
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                console.log('Login successful');
+                navigate('/dashboard');
+            } else {
+                setError('Invalid email or password');
+            }
+        } catch (err) {
+            console.error('Network error:', err);
+            setError('Unable to connect to server. Check if backend is running.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="login-page">
             {/* Background ambient gradient glow */}
@@ -21,14 +94,24 @@ const Login = () => {
 
                 {/* Login Card */}
                 <div className="login-card">
-                    <form className="login-form">
+                    <form className="login-form" onSubmit={HandleLogin}>
+                        {error && (
+                            <div style={{ color: '#ef4444', fontSize: '13.5px', textAlign: 'center', marginBottom: '8px' }}>
+                                {error}
+                            </div>
+                        )}
+
                         <div className="form-group">
                             <label htmlFor="email">Email address</label>
                             <input
                                 id="email"
+                                name="email"
                                 type="email"
                                 placeholder="name@company.com"
                                 className="form-input"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                required
                             />
                         </div>
 
@@ -39,14 +122,18 @@ const Login = () => {
                             </div>
                             <input
                                 id="password"
+                                name="password"
                                 type="password"
                                 placeholder="••••••••"
                                 className="form-input"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                required
                             />
                         </div>
 
-                        <button type="submit" className="btn-login-submit">
-                            Log in to Converge
+                        <button type="submit" className="btn-login-submit" disabled={loading} onClick={HandleLogin}>
+                            {loading ? 'Logging in...' : 'Log in to Converge'}
                         </button>
 
                         <div className="divider">
