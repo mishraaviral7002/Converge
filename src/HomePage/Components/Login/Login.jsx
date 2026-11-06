@@ -14,7 +14,7 @@ const Login = () => {
     useEffect(() => {
         async function verifyLoggingIN() {
             try{
-                const userInfo = await fetch("http://localhost:3000/checkForLoggedIn",
+                const userInfo = await fetch("https://converge-backend-t1.onrender.com/checkForLoggedIn",
                     {
                         method: "GET",
                         credentials: 'include',
@@ -52,7 +52,7 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('https://converge-backend-t1.onrender.com/login', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

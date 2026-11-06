@@ -38,7 +38,7 @@ const Canvas = () => {
     useEffect(() => {
         async function gettingDashBoards() {
             try {
-                const fetching = await fetch("http://localhost:3000/getCanvas", {
+                const fetching = await fetch("https://converge-backend-t1.onrender.com/getCanvas", {
                     method: 'GET',
                     credentials: 'include',
                 });
@@ -54,7 +54,7 @@ const Canvas = () => {
         }
         async function verifyLoggingIN() {
             try {
-                const userInfo = await fetch("http://localhost:3000/checkForLoggedIn", {
+                const userInfo = await fetch("https://converge-backend-t1.onrender.com/checkForLoggedIn", {
                     method: "GET",
                     credentials: 'include',
                 });
@@ -102,7 +102,7 @@ const Canvas = () => {
 
         try {
             const snapshot = getSnapshot(editorRef.current.store);
-            const confirmation = await fetch("http://localhost:3000/save-canvas", {
+            const confirmation = await fetch("https://converge-backend-t1.onrender.com/save-canvas", {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

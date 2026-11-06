@@ -436,7 +436,7 @@ const DashBoard = () => {
             const canvasName = window.prompt("Name your new whiteboard:", "Untitled Whiteboard");
             if (canvasName === null) return; // User cancelled
 
-            const response = await fetch("http://localhost:3000/createDashBoard", {
+            const response = await fetch("https://converge-backend-t1.onrender.com/createDashBoard", {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -478,7 +478,7 @@ const DashBoard = () => {
 
     const handleSwitchAccount = async () => {
         try {
-            await fetch('http://localhost:3000/logout', {
+            await fetch('https://converge-backend-t1.onrender.com/logout', {
                 method: 'POST',
                 credentials: 'include',
             });
@@ -491,7 +491,7 @@ const DashBoard = () => {
     useEffect(() => {
         async function gettingDashBoards() {
             try {
-                const fetching = await fetch("http://localhost:3000/getCanvas", {
+                const fetching = await fetch("https://converge-backend-t1.onrender.com/getCanvas", {
                     method: 'GET',
                     credentials: 'include',
                 });
@@ -510,7 +510,7 @@ const DashBoard = () => {
         async function verifyLoggingIN() {
             try {
                 const userInfo = await fetch(
-                    "http://localhost:3000/checkForLoggedIn",
+                    "https://converge-backend-t1.onrender.com/checkForLoggedIn",
                     {
                         method: "GET",
                         credentials: 'include',
