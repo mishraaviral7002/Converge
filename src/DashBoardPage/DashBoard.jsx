@@ -70,6 +70,61 @@ const DashBoard = () => {
         }
     };
 
+    // useEffect(() => {
+    //     async function gettingDashBoards() {
+    //         try {
+    //             const fetching = await fetch("https://converge-backend-t1.onrender.com/getCanvas", {
+    //                 method: 'GET',
+    //                 credentials: 'include',
+    //             });
+    //
+    //             if (fetching.status === 200) {
+    //                 const data = await fetching.json();
+    //                 setDashBoards(data);
+    //             } else {
+    //                 console.error("Error getting dashboard data:", fetching.status);
+    //             }
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //
+    //     async function verifyLoggingIN() {
+    //         try {
+    //             const userInfo = await fetch(
+    //                 "https://converge-backend-t1.onrender.com/checkForLoggedIn",
+    //                 {
+    //                     method: "GET",
+    //                     credentials: 'include',
+    //                 }
+    //             );
+    //
+    //             if (userInfo.status === 401) {
+    //                 window.location.href = '/login';
+    //                 return;
+    //             }
+    //
+    //             if (userInfo.status === 200) {
+    //                 const data = await userInfo.json();
+    //                 setNameConverge(data.name);
+    //                 setEmailConverge(data.email);
+    //                 setIsAllowed(true);
+    //
+    //                 await gettingDashBoards();
+    //             } else {
+    //                 setIsAllowed(false);
+    //             }
+    //         } catch (error) {
+    //             console.log("Auth check error:", error);
+    //             setIsAllowed(false);
+    //         } finally {
+    //             setIsLoading(false);
+    //         }
+    //     }
+    //
+    //     verifyLoggingIN();
+    // }, []);
+
     useEffect(() => {
         async function gettingDashBoards() {
             try {
@@ -85,7 +140,7 @@ const DashBoard = () => {
                     console.error("Error getting dashboard data:", fetching.status);
                 }
             } catch (error) {
-                console.log(error);
+                console.log("Canvas fetch error:", error);
             }
         }
 
@@ -99,12 +154,14 @@ const DashBoard = () => {
                     }
                 );
 
+                // Handle unauthorized access gracefully via router navigation
                 if (userInfo.status === 401) {
-                    window.location.href = '/login';
+                    navigate('/login', { replace: true });
                     return;
                 }
 
                 if (userInfo.status === 200) {
+                    // Call .json() EXACTLY ONCE
                     const data = await userInfo.json();
                     setNameConverge(data.name);
                     setEmailConverge(data.email);
@@ -123,7 +180,8 @@ const DashBoard = () => {
         }
 
         verifyLoggingIN();
-    }, []);
+    }, [navigate]);
+
 
     if (Loading) {
         return <div>Verifying your credentials, please wait...</div>;
