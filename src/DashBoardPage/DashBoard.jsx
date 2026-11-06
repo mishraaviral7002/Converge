@@ -517,6 +517,17 @@ const DashBoard = () => {
                     }
                 );
 
+
+                if (userInfo.status === 401) {
+                    window.location.href = '/login';
+                    return;
+                }
+
+
+                const data = await userInfo.json();
+                setNameConverge(data.name);
+                setEmailConverge(data.email);
+                setIsAllowed(true);
                 if (userInfo.status === 200) {
                     const data = await userInfo.json();
                     setNameConverge(data.name);
