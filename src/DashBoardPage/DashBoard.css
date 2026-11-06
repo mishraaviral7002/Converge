@@ -400,77 +400,247 @@
     border-radius: 6px;
 }
 
-.skeletal-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-}
+/* =========================================
+   Whiteboards Section & Dynamic Grid
+   ========================================= */
 
-.skeletal-item {
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 14px;
+.title-with-badge {
     display: flex;
     align-items: center;
-    gap: 14px;
-    cursor: pointer;
-    background: #ffffff;
-    transition: all 0.2s ease;
+    gap: 12px;
 }
 
-.skeletal-item:hover {
-    border-color: #2563eb;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
-    transform: translateY(-1px);
-}
-
-.skeletal-preview-box {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+.canvas-count-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
     background: #eff6ff;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 1px solid #dbeafe;
+}
+
+.canvas-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+/* Individual Canvas Card — Slim & Compact */
+.canvas-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+
+.canvas-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.1), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.canvas-card:hover::before {
+    opacity: 1;
+}
+
+.canvas-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.canvas-icon-preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: #2563eb;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.placeholder-item {
-    border: 1.5px dashed #cbd5e1;
-    cursor: default;
-    background: #fafafa;
+.canvas-card:hover .canvas-icon-preview {
+    background: #2563eb;
+    color: #ffffff;
+    transform: scale(1.04);
 }
 
-.placeholder-item:hover {
-    border-color: #cbd5e1;
-    box-shadow: none;
-    transform: none;
+/* Room code pill with copy action */
+.room-code-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 10.5px;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.empty-box {
-    background: #f1f5f9;
+.room-code-tag:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #2563eb;
+}
+
+.room-code-tag.copied {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+    color: #059669;
+}
+
+.copy-hint {
+    font-size: 9.5px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+/* Canvas Body */
+.canvas-card-body {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.canvas-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 3px 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.canvas-desc {
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Canvas Footer */
+.canvas-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.canvas-date {
+    font-size: 11.5px;
+    font-weight: 500;
     color: #94a3b8;
-    font-size: 20px;
-    font-weight: 300;
 }
 
-.skeletal-info {
+.btn-open-canvas {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.open-arrow {
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.canvas-card:hover .btn-open-canvas {
+    color: #1d4ed8;
+}
+
+.canvas-card:hover .open-arrow {
+    transform: translateX(3px);
+}
+
+/* Empty State */
+.empty-canvases-state {
+    background: #ffffff;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 20px;
+    padding: 48px 24px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.skeletal-title {
-    font-size: 14px;
-    font-weight: 600;
+.empty-icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.empty-title {
+    font-size: 17px;
+    font-weight: 700;
     color: #0f172a;
-    margin-bottom: 2px;
+    margin: 0 0 8px 0;
 }
 
-.skeletal-meta {
-    font-size: 12px;
+.empty-desc {
+    font-size: 13.5px;
     color: #64748b;
+    max-width: 420px;
+    line-height: 1.55;
+    margin: 0 0 20px 0;
+}
+
+.btn-create-empty {
+    padding: 10px 20px;
+    font-size: 13.5px;
 }
 
 /* =========================================
@@ -503,7 +673,7 @@
         gap: 18px;
     }
 
-    .skeletal-grid {
+    .canvas-cards-grid {
         grid-template-columns: 1fr;
     }
 }

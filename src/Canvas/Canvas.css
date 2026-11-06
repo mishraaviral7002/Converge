@@ -1,0 +1,118 @@
+/* ==========================================================================
+   CONVERGE CANVAS — FLOATING CONTROLS & TLDRAW MENU STYLES
+   ========================================================================== */
+
+.canvas-wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Floating Bottom-Right Controls Overlay (Dashboard Link & Room Code) */
+.canvas-bottom-bar {
+    position: absolute;
+    bottom: 16px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 500;
+    pointer-events: auto;
+}
+
+/* Back to Dashboard Button */
+.canvas-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.canvas-back-btn:hover {
+    background: #ffffff;
+    color: #0f172a;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Room Code Pill */
+.canvas-room-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.room-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 6px #10b981;
+}
+
+/* ==========================================================================
+   TLDRAW MENU ENHANCEMENTS — "SAVE CANVAS" ITEM STYLING
+   ========================================================================== */
+
+/* Enhanced tldraw popup menu container */
+.tlui-menu {
+    border-radius: 12px !important;
+    border: 1px solid rgba(226, 232, 240, 0.95) !important;
+    box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Save Canvas item inside Actions Menu (Three Dots) & Main Menu */
+button[data-testid="actions-menu.save-canvas"],
+button[data-testid="main-menu.save-canvas"] {
+    background: rgba(37, 99, 235, 0.06) !important;
+    color: #2563eb !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    margin: 3px 4px !important;
+    width: calc(100% - 8px) !important;
+    transition: all 0.18s ease !important;
+}
+
+button[data-testid="actions-menu.save-canvas"] .tlui-icon,
+button[data-testid="main-menu.save-canvas"] .tlui-icon {
+    color: #2563eb !important;
+}
+
+/* Hover state for Save Canvas menu item */
+button[data-testid="actions-menu.save-canvas"]:hover,
+button[data-testid="main-menu.save-canvas"]:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    transform: translateX(1px);
+}
+
+button[data-testid="actions-menu.save-canvas"]:hover .tlui-icon,
+button[data-testid="main-menu.save-canvas"]:hover .tlui-icon {
+    color: #ffffff !important;
+}
