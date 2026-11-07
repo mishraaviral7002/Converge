@@ -164,11 +164,23 @@ const Canvas = () => {
 
     // ── Conditional returns AFTER all hooks ─────────────────
     if (isLoading) {
-        return <div>Verifying your credentials, please wait...</div>;
+        return (
+            <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', color: '#64748b' }}>
+                Verifying your credentials, please wait...
+            </div>
+        );
     }
 
     if (!isAllowed) {
-        return <div>⛔ Access Denied...</div>;
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+                <div style={{ fontSize: '18px', fontWeight: '600', color: '#0f172a' }}>⛔ Access Denied</div>
+                <div style={{ color: '#64748b' }}>Please log in to access this canvas session.</div>
+                <Link to="/Login" style={{ padding: '8px 18px', background: '#2563eb', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: '500' }}>
+                    Go to Login
+                </Link>
+            </div>
+        );
     }
 
     if (store.status === 'loading') {

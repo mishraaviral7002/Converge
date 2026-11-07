@@ -1,50 +1,35 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [isCheckingAuth, setIsCheckingAuth] = useState(true);
     const navigate = useNavigate();
-    const [isAllowed, setIsAllowed] = useState(false);
-    const [Loading , setIsLoading] = useState(true);
 
     useEffect(() => {
         async function verifyLoggingIN() {
-            try{
-                const userInfo = await fetch("https://converge-backend-t1.onrender.com/checkForLoggedIn",
-                    {
-                        method: "GET",
-                        credentials: 'include',
-                    }
-                );
-                if(userInfo.status === 200) {
-                    setIsAllowed(false);
+            try {
+                const userInfo = await fetch("https://converge-backend-t1.onrender.com/checkForLoggedIn", {
+                    method: "GET",
+                    credentials: 'include',
+                });
+                if (userInfo.status === 200) {
+                    navigate('/dashboard', { replace: true });
+                    return;
                 }
-            }
-            catch(error){
-                console.log(error);
-                setIsAllowed(true);
-            }
-            finally{
-                setIsLoading(false);
+            } catch (error) {
+                console.log("Auth check error:", error);
+            } finally {
+                setIsCheckingAuth(false);
             }
         }
 
         verifyLoggingIN();
-    } ,[]) ;
-
-    if (Loading) {
-        return <div>Loading</div>;
-    }
-
-    if (!isAllowed) {
-        navigate('/dashboard' , { replace: true });
-    }
-
-
+    }, [navigate]);
 
     const HandleLogin = async (e) => {
         if (e) e.preventDefault();
@@ -65,7 +50,8 @@ const Login = () => {
                 console.log('Login successful');
                 navigate('/dashboard');
             } else {
-                setError('Invalid email or password');
+                const data = await response.json().catch(() => ({}));
+                setError(data.message || 'Invalid email or password');
             }
         } catch (err) {
             console.error('Network error:', err);
@@ -74,6 +60,14 @@ const Login = () => {
             setLoading(false);
         }
     };
+
+    if (isCheckingAuth) {
+        return (
+            <div className="login-page" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ color: '#64748b', fontSize: '15px' }}>Checking session...</div>
+            </div>
+        );
+    }
 
     return (
         <div className="login-page">
@@ -132,7 +126,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <button type="submit" className="btn-login-submit" disabled={loading} onClick={HandleLogin}>
+                        <button type="submit" className="btn-login-submit" disabled={loading}>
                             {loading ? 'Logging in...' : 'Log in to Converge'}
                         </button>
 

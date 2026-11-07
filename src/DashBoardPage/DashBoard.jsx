@@ -70,61 +70,6 @@ const DashBoard = () => {
         }
     };
 
-    // useEffect(() => {
-    //     async function gettingDashBoards() {
-    //         try {
-    //             const fetching = await fetch("https://converge-backend-t1.onrender.com/getCanvas", {
-    //                 method: 'GET',
-    //                 credentials: 'include',
-    //             });
-    //
-    //             if (fetching.status === 200) {
-    //                 const data = await fetching.json();
-    //                 setDashBoards(data);
-    //             } else {
-    //                 console.error("Error getting dashboard data:", fetching.status);
-    //             }
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     }
-    //
-    //     async function verifyLoggingIN() {
-    //         try {
-    //             const userInfo = await fetch(
-    //                 "https://converge-backend-t1.onrender.com/checkForLoggedIn",
-    //                 {
-    //                     method: "GET",
-    //                     credentials: 'include',
-    //                 }
-    //             );
-    //
-    //             if (userInfo.status === 401) {
-    //                 window.location.href = '/login';
-    //                 return;
-    //             }
-    //
-    //             if (userInfo.status === 200) {
-    //                 const data = await userInfo.json();
-    //                 setNameConverge(data.name);
-    //                 setEmailConverge(data.email);
-    //                 setIsAllowed(true);
-    //
-    //                 await gettingDashBoards();
-    //             } else {
-    //                 setIsAllowed(false);
-    //             }
-    //         } catch (error) {
-    //             console.log("Auth check error:", error);
-    //             setIsAllowed(false);
-    //         } finally {
-    //             setIsLoading(false);
-    //         }
-    //     }
-    //
-    //     verifyLoggingIN();
-    // }, []);
-
     useEffect(() => {
         async function gettingDashBoards() {
             try {
@@ -184,11 +129,23 @@ const DashBoard = () => {
 
 
     if (Loading) {
-        return <div>Verifying your credentials, please wait...</div>;
+        return (
+            <div style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', color: '#64748b' }}>
+                Verifying your credentials, please wait...
+            </div>
+        );
     }
 
     if (!isAllowed) {
-        return <div>⛔ Access Denied...</div>;
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+                <div style={{ fontSize: '18px', fontWeight: '600', color: '#0f172a' }}>⛔ Access Denied</div>
+                <div style={{ color: '#64748b' }}>You need to be logged in to view your dashboard.</div>
+                <Link to="/Login" style={{ padding: '8px 18px', background: '#2563eb', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: '500' }}>
+                    Go to Login
+                </Link>
+            </div>
+        );
     }
 
     return (
