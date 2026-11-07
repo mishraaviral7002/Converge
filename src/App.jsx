@@ -6,8 +6,15 @@ import Register from './HomePage/Components/Register/Register.jsx';
 import Login from './HomePage/Components/Login/Login.jsx';
 import Canvas from "./Canvas/Canvas.jsx";
 import DashBoard from './DashBoardPage/DashBoard.jsx';
+import { useEffect } from "react";
 function App() {
-  return (
+
+    const API_URL = "https://converge-backend-t1.onrender.com";
+    useEffect(() => {
+        fetch(API_URL, { mode: "no-cors" }).catch(() => {});
+    }, []);
+
+    return (
       <>
         <BrowserRouter>
           <Routes>

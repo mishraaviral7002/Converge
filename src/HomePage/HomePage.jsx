@@ -15,7 +15,7 @@ const Smile = ({ size = 28, className = '' }) => (
         viewBox="0 0 48 48"
         fill="none"
         aria-hidden="true"
-    >
+    >framer-motion
         <circle cx="16" cy="18" r="3" fill="currentColor" />
         <circle cx="32" cy="18" r="3" fill="currentColor" />
         <path
