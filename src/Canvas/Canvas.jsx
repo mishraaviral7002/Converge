@@ -16,6 +16,7 @@ import 'tldraw/tldraw.css';
 import './Canvas.css';
 
 const DEFAULT_ROOM_ID = 'converge-shared-whiteboard-session';
+const LICENSE_KEY = import.meta.env.VITE_TLDRAW_LICENSE_KEY || import.meta.env.VITE_KEY;
 
 const Canvas = () => {
     const { roomId } = useParams();
@@ -230,7 +231,7 @@ const Canvas = () => {
                         <span>#{activeRoomId}</span>
                     </div>
                 </div>
-                <Tldraw onMount={handleMount} components={customComponents} />
+                <Tldraw onMount={handleMount} components={customComponents} licenseKey={LICENSE_KEY} />
             </div>
         );
     }
@@ -250,7 +251,12 @@ const Canvas = () => {
                 </div>
             </div>
 
-            <Tldraw onMount={handleMount} store={store} components={customComponents} />
+            <Tldraw 
+                onMount={handleMount} 
+                store={store} 
+                components={customComponents} 
+                licenseKey={LICENSE_KEY}
+            />
         </div>
     );
 };
