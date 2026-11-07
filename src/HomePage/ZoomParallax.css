@@ -1,0 +1,56 @@
+.zp {
+    position: relative;
+    height: 300vh;
+}
+
+.zp-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #0a1633;
+}
+
+.zp-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+}
+
+.zp-frame {
+    position: relative;
+    width: 25vw;
+    height: 25vh;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #12224a;
+}
+
+.zp-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Centre piece (your hero image) keeps its own proportions */
+.zp-layer-0 .zp-frame { width: 25vw; height: 25vh; border: 3px solid #facc15; }
+.zp-layer-0 .zp-frame img { object-fit: contain; background: #fff; }
+
+.zp-layer-1 .zp-frame { top: -30vh;  left: 5vw;     width: 35vw; height: 30vh; }
+.zp-layer-2 .zp-frame { top: -10vh;  left: -25vw;   width: 20vw; height: 45vh; }
+.zp-layer-3 .zp-frame { left: 27.5vw;               width: 25vw; height: 25vh; }
+.zp-layer-4 .zp-frame { top: 27.5vh; left: 5vw;     width: 20vw; height: 25vh; }
+.zp-layer-5 .zp-frame { top: 27.5vh; left: -22.5vw; width: 30vw; height: 25vh; }
+.zp-layer-6 .zp-frame { top: 22.5vh; left: 25vw;    width: 15vw; height: 15vh; }
+
+@media (max-width: 868px) {
+    .zp-frame { min-width: 90px; }
+    .zp-layer-0 .zp-frame { width: 44vw; height: 22vh; }
+}
