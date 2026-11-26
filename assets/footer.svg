@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewBox="0 0 900 100" role="img" aria-label="Think together. Build smarter.">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8b7cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient></defs>
+<style>
+.f{font:600 15px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:3px;fill:#2dd4bf;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.55}}
+</style>
+<text class="f" x="450" y="32" text-anchor="middle">THINK TOGETHER. BUILD SMARTER.</text>
+<path d="M0 66 Q75 40 150 66 T300 66 T450 66 T600 66 T750 66 T900 66 T1050 66 T1200 66 V100 H0 Z" fill="url(#g)" opacity=".35"><animateTransform attributeName="transform" type="translate" from="0 0" to="-300 0" dur="9s" repeatCount="indefinite"/></path>
+<path d="M0 66 Q75 40 150 66 T300 66 T450 66 T600 66 T750 66 T900 66 T1050 66 T1200 66 V100 H0 Z" fill="url(#g)" opacity=".6"><animateTransform attributeName="transform" type="translate" from="-300 8" to="0 8" dur="6s" repeatCount="indefinite"/></path>
+</svg>

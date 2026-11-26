@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="96" viewBox="0 0 900 96" role="img" aria-label="Roadmap progress: 5 of 10 shipped">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8b7cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient></defs>
+<style>
+
+.fu{opacity:0;animation:fu .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pulse{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.march{animation:march 1.4s linear infinite}
+@keyframes march{to{stroke-dashoffset:-18}}
+.blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.l{font:600 11px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:2px;fill:#9fb0c8}
+.v{font:800 16px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf7}
+.sh{animation:sh 3.2s ease-in-out infinite}
+@keyframes sh{0%{transform:translateX(-120px);opacity:0}30%{opacity:.55}80%,100%{transform:translateX(426px);opacity:0}}
+</style>
+<text class="l" x="24" y="32">ROADMAP PROGRESS</text>
+<text class="v" x="876" y="32" text-anchor="end">5 of 10 shipped</text>
+<rect x="24" y="50" width="852" height="18" rx="9" fill="#161f33"/>
+<clipPath id="c"><rect x="24" y="50" width="852" height="18" rx="9"/></clipPath>
+<g clip-path="url(#c)">
+  <rect x="24" y="50" width="0" height="18" fill="url(#g)"><animate attributeName="width" from="0" to="426" dur="1.8s" begin=".2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .8 .2 1"/></rect>
+  <rect class="sh" x="24" y="50" width="90" height="18" fill="#ffffff" fill-opacity=".35"/>
+</g>
+<rect x="108.5" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="193.7" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="278.9" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="364.1" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="449.2" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="534.5" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="619.6" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="704.9" y="50" width="1.5" height="18" fill="#0b1018"/><rect x="790.0" y="50" width="1.5" height="18" fill="#0b1018"/>
+<circle class="pulse" cx="450" cy="59" r="5" fill="#ffffff"/>
+</svg>

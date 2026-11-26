@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="170" viewBox="0 0 900 170" role="img" aria-label="Flow: sign in, open a board, edit together, AI assist (planned)">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#8b7cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+  <radialGradient id="pk" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#2dd4bf"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+
+.fu{opacity:0;animation:fu .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pulse{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.march{animation:march 1.4s linear infinite}
+@keyframes march{to{stroke-dashoffset:-18}}
+.blink{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.no{font:600 10px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:2px;fill:#f59e0b}
+.nt{font:800 16px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf7}
+.ns{font:500 12px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#9fb0c8}
+.lg{font:500 10px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;fill:#5b6b88}
+.lit{fill-opacity:0;stroke-opacity:.3;animation:lit 8s ease-in-out infinite}
+@keyframes lit{0%{fill-opacity:0;stroke-opacity:.3}4%,12%{fill-opacity:.14;stroke-opacity:1}22%,100%{fill-opacity:0;stroke-opacity:.3}}
+</style>
+<line x1="195" y1="82" x2="255" y2="82" stroke="#1f2a3d" stroke-width="2"/>
+<line x1="425" y1="82" x2="485" y2="82" stroke="#1f2a3d" stroke-width="2"/>
+<line x1="655" y1="82" x2="715" y2="82" stroke="#f59e0b" stroke-opacity=".7" stroke-width="2" stroke-dasharray="4 5" class="march"/>
+<g class="fu" style="animation-delay:0.00s"><rect x="25.5" y="48.5" width="169" height="68" rx="14" fill="#0e1524" stroke="#1f2a3d"/><rect class="lit" x="25.5" y="48.5" width="169" height="68" rx="14" fill="#8b7cff" stroke="#8b7cff" style="animation-delay:0.44s"/><text class="no" x="41" y="68">STEP 01</text><text class="nt" x="41" y="88">Sign in</text><text class="ns" x="41" y="106">cookie-based session</text></g><g class="fu" style="animation-delay:0.15s"><rect x="255.5" y="48.5" width="169" height="68" rx="14" fill="#0e1524" stroke="#1f2a3d"/><rect class="lit" x="255.5" y="48.5" width="169" height="68" rx="14" fill="#2dd4bf" stroke="#2dd4bf" style="animation-delay:2.58s"/><text class="no" x="271" y="68">STEP 02</text><text class="nt" x="271" y="88">Open a board</text><text class="ns" x="271" y="106">join the room by ID</text></g><g class="fu" style="animation-delay:0.30s"><rect x="485.5" y="48.5" width="169" height="68" rx="14" fill="#0e1524" stroke="#1f2a3d"/><rect class="lit" x="485.5" y="48.5" width="169" height="68" rx="14" fill="#f472b6" stroke="#f472b6" style="animation-delay:4.72s"/><text class="no" x="501" y="68">STEP 03</text><text class="nt" x="501" y="88">Edit together</text><text class="ns" x="501" y="106">live sync for everyone</text></g><g class="fu" style="animation-delay:0.45s"><rect x="715.5" y="48.5" width="169" height="68" rx="14" fill="#0e1524" stroke="#1f2a3d" stroke-dasharray="4 5"/><rect class="lit" x="715.5" y="48.5" width="169" height="68" rx="14" fill="#f59e0b" stroke="#f59e0b" stroke-dasharray="4 5" style="animation-delay:6.86s"/><text class="no" x="731" y="68">STEP 04</text><text class="nt" x="731" y="88">AI assist</text><text class="ns" x="731" y="106">summaries and plans</text></g>
+<g>
+  <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" path="M25 82 H885" keyPoints="0;1" keyTimes="0;1"/>
+  <circle r="14" fill="url(#pk)"/><circle r="4.5" fill="#ffffff"/>
+</g>
+<text class="lg" x="25" y="154">solid: available now</text>
+<text class="lg" x="875" y="154" text-anchor="end">dashed: planned</text>
+</svg>
