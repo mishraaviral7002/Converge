@@ -1,110 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Converge: an AI-powered collaborative whiteboard. Think together. Build smarter.">
-<defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1018"/><stop offset="1" stop-color="#121a2c"/></linearGradient>
-  <linearGradient id="tt" x1="0" x2="1"><stop offset="0" stop-color="#8b7cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
-  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity=".08"/></pattern>
-  <radialGradient id="aura" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8b7cff" stop-opacity=".25"/><stop offset="1" stop-color="#8b7cff" stop-opacity="0"/></radialGradient>
-  <clipPath id="win"><rect x="520" y="36" width="356" height="268" rx="14"/></clipPath>
-  <clipPath id="ty"><rect x="48" y="150" width="0" height="36"><animate attributeName="width" dur="10s" repeatCount="indefinite" calcMode="discrete" keyTimes="0.0000;0.0600;0.0700;0.0800;0.0900;0.1000;0.1100;0.1200;0.1300;0.1400;0.1500;0.1600;0.1700;0.1800;0.1900;0.2000;0.2100;0.2200;0.2300;0.2400;0.2500;0.2600;0.2700;0.2800;0.2900;0.3000;0.3100;0.3200;0.3300;0.3400;0.3500;0.8500;1.0000" values="0;12.6;25.2;37.8;50.4;63.0;75.6;88.2;100.8;113.4;126.0;138.6;151.2;163.8;176.4;189.0;201.6;214.2;226.8;239.4;252.0;264.6;277.2;289.8;302.4;315.0;327.6;340.2;352.8;365.4;378.0;0;0"/></rect></clipPath>
-</defs>
-<style>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" role="img" aria-label="Converge: a shared whiteboard for teams. Ideas, feedback and deadlines converge into one plan.">
+<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#D9CFBC"/></pattern></defs>
+<rect width="900" height="340" rx="16" fill="#FBF7F0"/>
+<rect width="900" height="340" rx="16" fill="url(#dots)" opacity=".7"/>
+<rect x=".75" y=".75" width="898.5" height="338.5" rx="15.5" fill="none" stroke="#E4DCCB" stroke-width="1.5"/>
 
-.fu{opacity:0;animation:fu .9s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.pulse{animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.25}}
-.march{animation:march 1.4s linear infinite}
-@keyframes march{to{stroke-dashoffset:-18}}
-.blink{animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-.lab{font:600 12px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;letter-spacing:3px;fill:#f59e0b}
-.ttl{font:800 66px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;letter-spacing:-2px;fill:url(#tt)}
-.tag{font:600 22px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf7}
-.chip{font:600 12.5px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf7}
-.mono{font:500 12px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;fill:#9fb0c8}
-.nt{font:800 14px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#e6edf7}
-.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .8s cubic-bezier(.2,.9,.3,1.3) forwards}
-@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
-.ring{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
-@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.4);opacity:0}}
-.aura{animation:aura 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes aura{50%{transform:scale(1.15);opacity:.7}}
-</style>
-
-<rect width="900" height="340" rx="18" fill="url(#bg)"/>
-<rect width="900" height="340" rx="18" fill="url(#dots)"/>
-<circle class="aura" cx="700" cy="170" r="210" fill="url(#aura)"/>
-
-<!-- left column -->
-<g class="fu" style="animation-delay:.1s"><circle class="pulse" cx="52" cy="56" r="4" fill="#f59e0b"/><text class="lab" x="64" y="60">AI-POWERED COLLABORATIVE WHITEBOARD</text></g>
-<text class="ttl fu" x="44" y="132" style="animation-delay:.25s">Converge</text>
-<g class="fu" style="animation-delay:.45s"><text class="tag" x="48" y="176" textLength="378" lengthAdjust="spacing" clip-path="url(#ty)">Think together. Build smarter.</text><g class="blink"><rect y="155" width="3" height="26" fill="#2dd4bf" x="48"><animate attributeName="x" dur="10s" repeatCount="indefinite" calcMode="discrete" keyTimes="0.0000;0.0600;0.0700;0.0800;0.0900;0.1000;0.1100;0.1200;0.1300;0.1400;0.1500;0.1600;0.1700;0.1800;0.1900;0.2000;0.2100;0.2200;0.2300;0.2400;0.2500;0.2600;0.2700;0.2800;0.2900;0.3000;0.3100;0.3200;0.3300;0.3400;0.3500;0.8500;1.0000" values="48;60.6;73.2;85.8;98.4;111.0;123.6;136.2;148.8;161.4;174.0;186.6;199.2;211.8;224.4;237.0;249.6;262.2;274.8;287.4;300.0;312.6;325.2;337.8;350.4;363.0;375.6;388.2;400.8;413.4;426.0;48;48"/></rect></g></g>
-<g class="fu" style="animation-delay:0.75s"><rect x="48.5" y="204.5" width="133" height="26" rx="13" fill="#161f33" stroke="#1f2a3d"/><circle cx="62" cy="217.5" r="3" fill="#2dd4bf"/><text class="chip" x="72" y="222">Real-time sync</text></g><g class="fu" style="animation-delay:0.87s"><rect x="191.5" y="204.5" width="126" height="26" rx="13" fill="#161f33" stroke="#1f2a3d"/><circle cx="205" cy="217.5" r="3" fill="#2dd4bf"/><text class="chip" x="215" y="222">tldraw canvas</text></g><g class="fu" style="animation-delay:0.99s"><rect x="327.5" y="204.5" width="111" height="26" rx="13" fill="#161f33" stroke="#1f2a3d"/><circle cx="341" cy="217.5" r="3" fill="#2dd4bf"/><text class="chip" x="351" y="222">AI planning</text></g>
-<g class="fu" style="animation-delay:1.1s">
-  <circle cx="58" cy="268" r="11" fill="#8b7cff" stroke="#0b1018" stroke-width="2"/>
-  <circle cx="76" cy="268" r="11" fill="#2dd4bf" stroke="#0b1018" stroke-width="2"/>
-  <circle cx="94" cy="268" r="11" fill="#f472b6" stroke="#0b1018" stroke-width="2"/>
-  <circle class="pulse" cx="120" cy="268" r="4" fill="#22c55e"/>
-  <text class="mono" x="132" y="272">3 collaborators in this room</text>
+<!-- mark + title -->
+<g transform="translate(48 78)">
+  <path d="M2 6 L30 22 M2 22 L30 22 M2 38 L30 22" stroke="#2F6FED" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="38" cy="22" r="7" fill="#FF7A1A"/>
 </g>
-<g class="fu" style="animation-delay:1.25s">
-  <rect x="48.5" y="288.5" width="190" height="24" rx="12" fill="#161f33" stroke="#f59e0b" stroke-opacity=".6"/>
-  <circle class="pulse" cx="64" cy="300.5" r="3.5" fill="#f59e0b"/>
-  <text class="mono" x="76" y="304" style="font-size:11px;fill:#f59e0b">IN ACTIVE DEVELOPMENT</text>
+<text x="108" y="118" style="font:800 62px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;letter-spacing:-2px;fill:#14213D">Converge</text>
+<path d="M108.0 135.4 L130.0 135.5 L152.0 136.2 L174.0 132.4 L196.0 134.4 L218.0 134.0 L240.0 134.4 L262.0 136.1 L284.0 135.2 L306.0 136.2 L328.0 132.2 L350.0 134.7 L372.0 134.8 L394.0 135.2 L416.0 134.6 L424.0 135.6" fill="none" stroke="#FF7A1A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.03;0.13;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M112.0 137.2 L134.0 139.7 L156.0 137.6 L178.0 138.4 L200.0 139.6 L222.0 138.8 L244.0 137.2 L266.0 136.9 L288.0 137.3 L310.0 138.5 L332.0 140.0 L354.0 139.6 L376.0 137.6 L398.0 137.6 L410.0 139.3" fill="none" stroke="#FF7A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".6"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.05;0.15;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path>
+<text x="48" y="178" style="font:700 24px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#2F6FED">Think together. Build smarter.</text>
+<text x="48" y="208" style="font:400 15.5px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#5B6785">A shared whiteboard for teams. Open a board,</text>
+<text x="48" y="230" style="font:400 15.5px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#5B6785">share its ID, and everyone who joins edits</text>
+<text x="48" y="252" style="font:400 15.5px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#5B6785">the same canvas, live.</text>
+
+<g transform="rotate(-3 118 292)">
+  <rect x="48" y="276" width="140" height="30" rx="6" fill="none" stroke="#FF7A1A" stroke-width="2"/>
+  <text x="118" y="296" text-anchor="middle" style="font:800 11.5px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;letter-spacing:1.5px;fill:#FF7A1A">WORK IN PROGRESS</text>
 </g>
 
-<!-- whiteboard window -->
-<g class="fu" style="animation-delay:.5s">
-  <rect x="520.5" y="36.5" width="355" height="267" rx="14" fill="#0e1524" stroke="#1f2a3d"/>
-  <rect x="521" y="37" width="354" height="34" fill="#0c1220" clip-path="url(#win)"/>
-  <circle cx="540" cy="54" r="4" fill="#ef4444"/><circle cx="555" cy="54" r="4" fill="#f59e0b"/><circle cx="570" cy="54" r="4" fill="#22c55e"/>
-  <text class="mono" x="590" y="58" style="font-size:11px">board / converge-room</text>
-  <circle cx="824" cy="54" r="7" fill="#8b7cff" stroke="#0c1220" stroke-width="2"/>
-  <circle cx="840" cy="54" r="7" fill="#2dd4bf" stroke="#0c1220" stroke-width="2"/>
-  <circle cx="856" cy="54" r="7" fill="#f472b6" stroke="#0c1220" stroke-width="2"/>
-</g>
-
-<g clip-path="url(#win)">
-  <!-- sticky notes -->
-  <g class="pop" style="animation-delay:.9s"><rect x="546" y="96" width="100" height="64" rx="8" fill="#241d4d" stroke="#8b7cff"/><text class="nt" x="560" y="120">Ideas</text><rect x="560" y="130" width="64" height="4" rx="2" fill="#9fb0c8" opacity=".5"/><rect x="560" y="140" width="44" height="4" rx="2" fill="#9fb0c8" opacity=".35"/></g>
-  <g class="pop" style="animation-delay:1.1s"><rect x="730" y="112" width="100" height="64" rx="8" fill="#0f2f2e" stroke="#2dd4bf"/><text class="nt" x="744" y="136">Plan</text><rect x="744" y="146" width="64" height="4" rx="2" fill="#9fb0c8" opacity=".5"/><rect x="744" y="156" width="44" height="4" rx="2" fill="#9fb0c8" opacity=".35"/></g>
-  <g class="pop" style="animation-delay:1.3s"><rect x="640" y="214" width="100" height="56" rx="8" fill="#3a2a0c" stroke="#f59e0b"/><text class="nt" x="654" y="238">Tasks</text><rect x="654" y="248" width="64" height="4" rx="2" fill="#9fb0c8" opacity=".5"/></g>
-
-  <!-- connectors drawn live by collaborators -->
-  <path d="M646 128 C 680 118, 700 150, 730 144" fill="none" stroke="#8b7cff" stroke-width="2.4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
-    <animate attributeName="stroke-dashoffset" dur="8s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.15;.4;1"/>
-    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.92;1"/>
-  </path>
-  <path d="M780 176 C 790 214, 770 240, 740 242" fill="none" stroke="#2dd4bf" stroke-width="2.4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
-    <animate attributeName="stroke-dashoffset" dur="8s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.45;.7;1"/>
-    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.92;1"/>
-  </path>
-
-  <!-- AI assistant (planned) -->
-  <line class="march" x1="598" y1="250" x2="640" y2="244" stroke="#f59e0b" stroke-width="1.6" stroke-dasharray="4 5"/>
-  <circle class="ring" cx="580" cy="252" r="17" fill="none" stroke="#f59e0b"/>
-  <circle cx="580" cy="252" r="17" fill="#1c1330" stroke="#f59e0b" stroke-dasharray="3 3"/>
-  <text x="580" y="256" text-anchor="middle" style="font:800 11px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;fill:#f59e0b">AI</text>
-  <text x="580" y="284" text-anchor="middle" style="font:500 9px 'Fira Code','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;fill:#9fb0c8">assistant · planned</text>
-
-  <!-- live cursors -->
-  <g>
-    <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;.15;.4;1" path="M646 128 C 680 118, 700 150, 730 144"/>
-    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.92;1"/>
-    <path d="M0 0 L0 16 L4.5 12 L8 19 L10.5 18 L7 11 L13 11 Z" fill="#8b7cff" stroke="#0b1018" stroke-width="1"/>
-    <rect x="12" y="16" width="38" height="18" rx="9" fill="#8b7cff"/><text x="31" y="28.5" text-anchor="middle" style="font:700 10px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#0b1018">Aria</text>
-  </g>
-  <g>
-    <animateMotion dur="8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;.45;.7;1" path="M780 176 C 790 214, 770 240, 740 242"/>
-    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.92;1"/>
-    <path d="M0 0 L0 16 L4.5 12 L8 19 L10.5 18 L7 11 L13 11 Z" fill="#2dd4bf" stroke="#0b1018" stroke-width="1"/>
-    <rect x="12" y="16" width="34" height="18" rx="9" fill="#2dd4bf"/><text x="29" y="28.5" text-anchor="middle" style="font:700 10px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#0b1018">Sam</text>
-  </g>
-  <g>
-    <animateMotion dur="9s" repeatCount="indefinite" path="M690 88 C 720 74, 770 80, 780 98 C 790 118, 700 112, 690 88 Z"/>
-    <path d="M0 0 L0 16 L4.5 12 L8 19 L10.5 18 L7 11 L13 11 Z" fill="#f472b6" stroke="#0b1018" stroke-width="1"/>
-    <rect x="12" y="16" width="30" height="18" rx="9" fill="#f472b6"/><text x="27" y="28.5" text-anchor="middle" style="font:700 10px 'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif;fill:#0b1018">Kai</text>
-  </g>
-</g>
+<!-- whiteboard -->
+<rect x="498" y="38" width="380" height="270" rx="8" fill="#14213D"/>
+<rect x="492" y="32" width="380" height="270" rx="8" fill="#FFFFFF" stroke="#14213D" stroke-width="2"/>
+<g transform="rotate(-2.2 576 86)"><g opacity="1"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.04;0.08;.93;1"/><rect x="516" y="58" width="120" height="56" rx="3" fill="#D6E4FF"/><text x="530" y="82" style="font:700 15px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#14213D">ideas</text><path d="M529.4 93.8 Q565.0 93.5 599.4 93.3 M530.7 103.5 Q554.0 102.8 578.4 102.6" stroke="#5B6785" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/></g><path d="M515.6 57.5 Q576.0 58.1 635.4 57.5 M636.5 58.5 Q634.3 86.0 636.5 113.5 M636.2 114.4 Q576.0 114.8 516.6 114.6 M516.2 114.3 Q514.3 86.0 516.0 57.5" fill="none" stroke="#14213D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.04;0.09;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M515.3 58.7 Q576.0 57.9 636.6 58.1 M636.7 58.1 Q636.8 86.0 636.6 114.6 M635.9 114.2 Q576.0 114.0 515.9 113.5 M516.5 113.3 Q515.2 86.0 515.3 58.2" fill="none" stroke="#14213D" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.045;0.095;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path></g><g transform="rotate(1.6 576 156)"><g opacity="1"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.08;0.12;.93;1"/><rect x="516" y="128" width="120" height="56" rx="3" fill="#FFE1C7"/><text x="530" y="152" style="font:700 15px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#14213D">feedback</text><path d="M530.1 164.0 Q565.0 163.6 599.7 164.8 M529.9 172.5 Q554.0 172.4 578.2 172.6" stroke="#5B6785" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/></g><path d="M516.4 127.7 Q576.0 127.4 636.1 128.6 M635.3 127.6 Q637.6 156.0 636.4 184.2 M635.7 183.5 Q576.0 185.1 515.9 183.3 M516.6 184.7 Q516.8 156.0 516.4 128.7" fill="none" stroke="#14213D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.08;0.13;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M515.7 128.7 Q576.0 126.1 636.4 127.9 M636.2 128.5 Q634.2 156.0 635.7 183.5 M635.4 183.8 Q576.0 184.2 516.7 183.7 M515.3 183.5 Q514.0 156.0 516.5 127.8" fill="none" stroke="#14213D" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.085;0.135;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path></g><g transform="rotate(-1.2 576 226)"><g opacity="1"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.12;0.16;.93;1"/><rect x="516" y="198" width="120" height="56" rx="3" fill="#D6E4FF"/><text x="530" y="222" style="font:700 15px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#14213D">deadlines</text><path d="M529.4 234.8 Q565.0 233.6 599.9 233.5 M529.3 242.5 Q554.0 242.1 578.3 242.4" stroke="#5B6785" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/></g><path d="M516.0 197.6 Q576.0 196.2 636.8 197.4 M636.4 197.9 Q635.9 226.0 636.8 254.0 M635.9 253.3 Q576.0 255.0 515.9 253.6 M516.5 254.0 Q517.6 226.0 515.3 197.6" fill="none" stroke="#14213D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.12;0.16999999999999998;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M515.5 197.6 Q576.0 197.0 636.6 197.4 M636.7 198.1 Q637.8 226.0 636.8 253.8 M636.2 254.5 Q576.0 252.4 516.4 254.0 M515.5 254.6 Q514.4 226.0 516.6 198.7" fill="none" stroke="#14213D" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.125;0.175;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path></g><path d="M639.8 90.2 C691.2 86.6 707.3 138.1 734.2 148.2 M734.0 148.0 L726.7 139.8 M734.0 148.0 L723.1 149.7" fill="none" stroke="#2F6FED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.16;0.26;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M639.7 90.5 C691.8 84.3 707.9 139.8 734.2 147.5 M734.0 148.0 L726.7 139.8 M734.0 148.0 L723.1 149.7" fill="none" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.165;0.265;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M640.5 159.6 C685.9 160.7 704.2 162.7 734.2 164.1 M734.0 164.0 L724.3 158.7 M734.0 164.0 L724.3 169.3" fill="none" stroke="#2F6FED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.22;0.32;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M640.3 160.5 C682.9 158.0 707.7 162.1 734.5 163.5 M734.0 164.0 L724.3 158.7 M734.0 164.0 L724.3 169.3" fill="none" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.225;0.325;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M640.4 230.3 C691.5 232.2 709.5 186.8 734.2 179.8 M734.0 180.0 L723.2 177.8 M734.0 180.0 L726.3 187.9" fill="none" stroke="#2F6FED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.28;0.38;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M640.5 230.3 C689.9 232.1 706.1 186.1 734.1 180.0 M734.0 180.0 L723.2 177.8 M734.0 180.0 L726.3 187.9" fill="none" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.28500000000000003;0.385;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><g opacity="1"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.4;0.45;.93;1"/><rect x="738" y="122" width="122" height="84" rx="4" fill="#FFE1C7"/><text x="754" y="150" style="font:800 20px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#14213D">plan</text><path d="M776.2 169.4 Q809.0 170.7 841.8 170.4 M775.2 190.5 Q800.0 190.0 824.5 189.3" stroke="#5B6785" stroke-width="2" stroke-linecap="round" fill="none" opacity=".6"/><path d="M753.8 164.5 Q759.0 164.2 763.7 163.6 M764.7 163.4 Q764.1 169.0 763.4 174.2 M764.0 173.9 Q759.0 172.5 754.6 174.4 M754.6 173.5 Q752.3 169.0 753.7 164.5 M754.5 183.5 Q759.0 183.7 764.6 183.5 M764.0 183.7 Q765.4 189.0 764.1 194.6 M763.2 193.7 Q759.0 193.2 754.1 194.0 M754.0 193.3 Q754.9 189.0 753.6 184.6" stroke="#14213D" stroke-width="1.6" fill="none" stroke-linecap="round"/></g><path d="M738.4 122.8 Q799.0 121.4 860.2 122.3 M859.7 122.7 Q859.6 164.0 859.9 206.7 M860.6 206.5 Q799.0 206.8 738.2 205.9 M738.4 205.8 Q736.6 164.0 738.3 121.4" fill="none" stroke="#FF7A1A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.4;0.49;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M737.4 122.5 Q799.0 120.3 859.5 122.6 M860.1 121.8 Q860.5 164.0 860.2 205.3 M860.7 205.5 Q799.0 206.4 738.2 205.7 M737.2 205.2 Q737.2 164.0 738.7 122.5" fill="none" stroke="#FF7A1A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" opacity=".5"><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.405;0.495;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M755 170 L759 174 L766 164" fill="none" stroke="#FF7A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.52;0.57;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><path d="M755 190 L759 194 L766 184" fill="none" stroke="#FF7A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.59;0.64;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path><g opacity="1"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.7;0.74;.93;1"/><rect x="752" y="72" width="94" height="26" rx="13" fill="#FBF7F0" stroke="#FF7A1A" stroke-width="1.8" stroke-dasharray="5 4"/><text x="799" y="89" text-anchor="middle" style="font:700 12px -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;fill:#FF7A1A;letter-spacing:.5px">AI, soon</text></g><path d="M799 102 L799 118 M793 112 L799 119 L805 112" fill="none" stroke="#FF7A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" ><animate attributeName="stroke-dashoffset" dur="12s" repeatCount="indefinite" values="1.02;1.02;0;0" keyTimes="0;0.74;0.79;1"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0" keyTimes="0;.93;1"/></path>
+<rect x="596" y="270" width="176" height="28" rx="8" fill="#FBF7F0" stroke="#E4DCCB"/><rect x="672" y="274" width="24" height="20" rx="5" fill="#FFE1C7"/><path d="M612 276 L612 292 L616.5 288 L620 295 L622 294 L618.5 287.5 L624 287.5 Z" fill="#14213D"/><path d="M644 292 L654 278 L658 282 L648 295 Z" fill="none" stroke="#14213D" stroke-width="1.6" stroke-linejoin="round"/><rect x="676" y="279" width="16" height="11" rx="2" fill="none" stroke="#14213D" stroke-width="1.6"/><path d="M712 292 L726 281 M720 280 L727 281 L725 288" fill="none" stroke="#14213D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="742" y="277" width="16" height="16" rx="2" fill="#D6E4FF" stroke="#14213D" stroke-width="1.6"/>
 </svg>

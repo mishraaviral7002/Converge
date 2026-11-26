@@ -1,71 +1,59 @@
 <div align="center">
-  <img src="assets/hero.svg" width="100%" alt="Converge: an AI-powered collaborative whiteboard. Think together. Build smarter." />
+  <img src="assets/hero.svg" width="100%" alt="Converge: a shared whiteboard for teams. Ideas, feedback and deadlines converge into one plan." />
 
   <p>
-    <a href="https://converge-sq19.vercel.app"><img src="https://img.shields.io/badge/Live%20demo-converge--sq19.vercel.app-0E9F92?style=for-the-badge&logo=vercel&logoColor=white" alt="Live demo" /></a>
-    <img src="https://img.shields.io/badge/Status-In%20active%20development-F59E0B?style=for-the-badge" alt="Status: in active development" />
-  </p>
-
-  <p>
-    <a href="#overview">Overview</a> ·
-    <a href="#demo">Live demo</a> ·
-    <a href="#features">Features</a> ·
-    <a href="#how-it-works">How it works</a> ·
-    <a href="#getting-started">Getting started</a> ·
-    <a href="#roadmap">Roadmap</a> ·
-    <a href="#contributing">Contributing</a>
+    <a href="https://converge-sq19.vercel.app"><img src="https://img.shields.io/badge/Live%20demo-open%20the%20app-2F6FED?style=flat-square" alt="Live demo" /></a>
+    <img src="https://img.shields.io/badge/Status-in%20development-FF7A1A?style=flat-square" alt="Status: in development" />
+    <a href="https://github.com/mishraaviral7002/Converge/issues"><img src="https://img.shields.io/badge/Feedback-welcome-14213D?style=flat-square" alt="Feedback welcome" /></a>
   </p>
 </div>
 
-<a name="overview"></a>
-<img src="assets/heading-overview.svg" width="100%" alt="Overview" />
+## About
 
-Converge is a shared visual workspace where people, ideas, and plans come together on one canvas. It combines real-time collaboration with AI-assisted planning, so scattered thoughts from a brainstorm can become structured, actionable outcomes without leaving the board.
+Converge is a shared whiteboard for teams. You open a board, share its ID, and everyone who joins lands on the same canvas and sees each other's changes as they happen.
 
-Most teams brainstorm in one tool and plan in another, and the context gets lost in between. Converge closes that gap: the same space where an idea is sketched is the space where it is refined, organised, and turned into a plan.
+I started it because brainstorms and plans usually live in different tools, and the context gets lost in the move between them. The goal is for a plan to start on the same canvas the idea started on. An AI assistant that helps turn a messy board into a plan is the next thing I'm building.
 
-> **Status:** Converge is under active development. The collaborative whiteboard, rooms, and authentication are working today. The AI features described below are on the roadmap.
+**Try it:** [converge-sq19.vercel.app](https://converge-sq19.vercel.app). Sign in, open a board, and send the board ID to a friend.
 
-<a name="demo"></a>
-<img src="assets/heading-demo.svg" width="100%" alt="Live demo" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
-Try it here: **[converge-sq19.vercel.app](https://converge-sq19.vercel.app)**
+## What works today
 
-Sign in, open a board, and share its board ID with someone else. Anyone who joins with the same ID lands in the same room and sees changes as they happen.
+- **A real whiteboard.** The canvas is built on [tldraw](https://tldraw.dev), so drawing, writing and arranging notes feels familiar.
+- **Live editing.** Several people can work on one board at the same time and see changes right away.
+- **Rooms by board ID.** The same ID puts people in the same room. Nothing else to set up.
+- **Sign-in before joining.** Authentication uses cookie-based sessions, so only signed-in users can enter a board.
+- **Deployed.** Frontend on Vercel, backend on Render.
 
-<a name="features"></a>
-<img src="assets/heading-features.svg" width="100%" alt="Features" />
+## What's coming
 
-**Available now**
+- **An AI assistant** that can suggest ideas, summarise a discussion, and expand a rough thought.
+- **Board to plan.** Turning what's on the canvas into tasks and a workflow.
+- **Mind maps.** Linking related ideas so the connections are visible.
+- **Shared workspaces.** Grouping boards by team or project.
+- **Saved boards.** Persistent storage and board history.
 
-<img src="assets/features-now.svg" width="100%" alt="Available now: interactive whiteboard built on tldraw, real-time collaboration, room-based boards, and secure sign-in with cookie-based sessions" />
+## How it works
 
-**Planned**
+<img src="assets/how-it-works.svg" width="100%" alt="Flow: sign in, open a board, edit together, ask the AI (planned)" />
 
-<img src="assets/features-planned.svg" width="100%" alt="Planned: AI brainstorming, intelligent planning, visual mind mapping, and shared workspaces" />
-
-<a name="how-it-works"></a>
-<img src="assets/heading-how.svg" width="100%" alt="How it works" />
-
-<img src="assets/flow.svg" width="100%" alt="Flow: sign in, open a board, edit together, AI assist (planned)" />
+Here is the same thing as a system diagram. Dashed boxes are not built yet.
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#D6E4FF', 'primaryBorderColor': '#2F6FED', 'primaryTextColor': '#14213D', 'lineColor': '#5B6785', 'edgeLabelBackground': '#FBF7F0', 'fontFamily': 'ui-sans-serif, system-ui, sans-serif'}}}%%
 flowchart LR
     A["Browser<br/>React + tldraw"] -- "HTTPS (auth, sessions)" --> B["API server<br/>Node.js + Express"]
     A <-- "Real-time sync<br/>(WebSockets)" --> B
     B -. "planned" .-> C["LLM API<br/>AI assistant"]
     B --> D[("Database<br/>to be decided")]
+    classDef planned fill:#FFE1C7,stroke:#FF7A1A,color:#7A3300,stroke-dasharray:4 3
+    classDef tbd fill:#F1EEE8,stroke:#9AA3B5,color:#14213D,stroke-dasharray:4 3
+    class C planned
+    class D tbd
 ```
 
-1. A user signs in and receives a cookie-based session.
-2. They open a board by ID, which places them in that board's room.
-3. Edits are synchronised between everyone in the room in real time.
-4. Planned: an AI assistant reads the board's content and helps summarise, expand, and organise it.
-
-<a name="tech-stack"></a>
-<img src="assets/heading-stack.svg" width="100%" alt="Tech stack" />
-
-<img src="assets/stack.svg" width="100%" alt="Tech stack: React, Vite, TypeScript, tldraw, Tailwind CSS, Node.js, Express, Socket.IO, Vercel, Render" />
+## Tech stack
 
 | Layer | Technology |
 |:--|:--|
@@ -74,35 +62,27 @@ flowchart LR
 | Styling | CSS / Tailwind CSS |
 | Backend | Node.js, Express |
 | Real-time | WebSockets / Socket.IO |
-| Database | To be determined |
-| AI | LLM API integration (planned) |
+| Database | Not decided yet |
+| AI | LLM API (planned) |
 | Hosting | Vercel (frontend), Render (backend) |
 
-The stack will continue to evolve as the project grows.
+The stack will keep changing as the project grows.
 
-<a name="getting-started"></a>
-<img src="assets/heading-start.svg" width="100%" alt="Getting started" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
-### Prerequisites
+## Getting started
 
-- Node.js 18 or later
-- npm (or your preferred package manager)
-
-### Installation
+You need Node.js 18 or later and npm.
 
 ```bash
-# 1. Clone the repository
+# clone and install
 git clone https://github.com/mishraaviral7002/Converge.git
 cd Converge
-
-# 2. Install dependencies for the client and the server
 cd client && npm install
 cd ../server && npm install
 ```
 
-### Configuration
-
-Create a `.env` file in each of the `client` and `server` folders. Typical values:
+Create a `.env` file in each of `client` and `server`:
 
 ```bash
 # server/.env
@@ -114,52 +94,42 @@ SESSION_SECRET=replace-with-a-long-random-string
 VITE_API_URL=http://localhost:5000
 ```
 
-### Run locally
+Then run both halves in separate terminals:
 
 ```bash
-# Terminal 1: start the API server
+# terminal 1
 cd server && npm run dev
 
-# Terminal 2: start the frontend
+# terminal 2
 cd client && npm run dev
 ```
 
-Then open the URL printed by Vite, usually `http://localhost:5173`.
+Open the address Vite prints, usually `http://localhost:5173`.
 
-<a name="roadmap"></a>
-<img src="assets/heading-roadmap.svg" width="100%" alt="Roadmap" />
+## Roadmap
 
-<img src="assets/roadmap.svg" width="100%" alt="Roadmap progress: 5 of 10 shipped" />
-
-- [x] Interactive whiteboard on tldraw
+- [x] Whiteboard on tldraw
 - [x] Real-time multi-user editing
-- [x] Room-based boards
+- [x] Rooms by board ID
 - [x] Authentication and cookie-based sessions
-- [x] Deployed frontend and backend
-- [ ] AI assistant for brainstorming and summaries
-- [ ] AI-generated plans, tasks, and workflows
-- [ ] Mind-map tools for linking ideas
-- [ ] Shared workspaces for teams and projects
+- [x] Frontend and backend deployed
+- [ ] AI assistant for ideas and summaries
+- [ ] AI-generated plans, tasks and workflows
+- [ ] Mind-map tools
+- [ ] Shared workspaces
 - [ ] Persistent storage and board history
 
-<a name="contributing"></a>
-<img src="assets/heading-contrib.svg" width="100%" alt="Contributing" />
+## Contributing
 
-Converge is in its early stages, and feedback is genuinely useful right now. Ideas, bug reports, and suggestions are all welcome.
+Converge is early, so feedback helps a lot right now. Bug reports, ideas and suggestions are all welcome.
 
-1. Open an [issue](https://github.com/mishraaviral7002/Converge/issues) to report a bug or propose a feature.
-2. For code changes, fork the repository, create a branch, and open a pull request describing what you changed and why.
+1. Open an [issue](https://github.com/mishraaviral7002/Converge/issues) to report a bug or suggest a feature.
+2. To change code, fork the repo, make a branch, and open a pull request that says what changed and why.
 
 ## License
 
-A license will be added once the licensing terms for the project have been decided.
+A license will be added once the terms are decided.
 
 ## Author
 
-Built by **Aviral Mishra**.
-
-[LinkedIn](https://www.linkedin.com/in/aviral-mishra-9ba02b348/) · [GitHub](https://github.com/mishraaviral7002)
-
-<br />
-
-<img src="assets/footer.svg" width="100%" alt="Think together. Build smarter." />
+Built by [Aviral Mishra](https://github.com/mishraaviral7002). Say hello on [LinkedIn](https://www.linkedin.com/in/aviral-mishra-9ba02b348/).
